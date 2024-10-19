@@ -1,0 +1,181 @@
+/* General Reset and Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    background-color: #f0f4f8; /* Light background for better contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Layout Structure */
+header, nav, section, aside, footer {
+    padding: 15px;
+    border-radius: 10px; /* More pronounced rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+/* Header Styles */
+header {
+    background-color: #3b5998; /* Facebook blue for the header */
+    color: white; /* White text color for contrast */
+    display: flex;
+    align-items: center; /* Centering vertically */
+    justify-content: space-between; /* Ensure content is spaced correctly */
+    flex-direction: row; /* Ensure image and text are side by side */
+}
+
+/* Optional: if you want to ensure text doesn't wrap awkwardly */
+header h3 {
+    margin-left: 25px; /* Adds space between the image and text */
+    white-space: nowrap; /* Prevents text wrapping if needed */
+}
+
+/* Logo Image in Header */
+header img {
+    height: 90px; /* Set a fixed height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #4CAF50; /* Green background for the navigation */
+    padding: 15px; /* Increased padding for better touch targets */
+}
+
+/* Navigation List Styles */
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0; /* Space between navbar items */
+}
+
+/* Navigation Links Styling */
+nav ul li a {
+    text-decoration: none;
+    color: white; /* White text for navigation links */
+    font-weight: bold;
+    padding: 12px 20px; /* Increased padding for better touch targets */
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for hover */
+}
+
+/* Hover Effects for Links */
+nav ul li a:hover {
+    background-color: #45a049; /* Darker green for hover effect */
+    color: white;
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Main Content Area */
+main {
+    display: flex;
+    flex: 1; /* Allow main to grow */
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    gap: 20px; /* Gap between flex items */
+}
+
+/* Section and Aside Styles */
+section {
+    flex: 2; /* Main content takes more space */
+    padding: 20px;
+    background-color: white; /* White background for main content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+aside {
+    flex: 1; /* Sidebar takes less space */
+    padding: 20px;
+    background-color: #e6f7ff; /* Light blue background for the aside */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #3b5998; /* Blue background for the footer */
+    color: white; /* White text color for contrast */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+/* Footer Content Alignment */
+footer .left, footer .center, footer .right {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav {
+        width: 100%; /* Full width for navigation on medium screens */
+    }
+
+    main {
+        flex-direction: column; /* Stack main content vertically */
+    }
+
+    section, aside {
+        width: 100%; /* Full width for section and aside */
+        margin-bottom: 20px; /* Space between stacked items */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    nav {
+        width: 100%; /* Full width for navigation on smaller screens */
+    }
+
+    main {
+        flex-direction: column; /* Stack main content vertically */
+    }
+
+    section, aside {
+        width: 100%; /* Full width for section and aside */
+        margin-bottom: 20px; /* Space between stacked items */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    footer .left, footer .center, footer .right {
+        text-align: left; /* Align text to the left on small screens */
+        margin-bottom: 10px; /* Space between footer items */
+    }
+
+    footer .right {
+        text-align: right; /* Right align for the right footer */
+    }
+
+    header {
+        flex-direction: column; /* Stack header items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    header img {
+        height: 50px; /* Resize logo for smaller screens */
+    }
+}
